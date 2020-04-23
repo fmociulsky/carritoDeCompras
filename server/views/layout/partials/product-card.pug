@@ -1,0 +1,10 @@
+.col-4.mb-md-4   
+    .card
+        img(src="img/curso1.jpg")
+        .info-card
+            h3 #{producto.titulo}
+            p #{producto.descripcion}
+            .d-flex.justify-content-between
+                p.precio $#{producto.precio}
+                h5 $#{producto.precio_oferta}
+            a(href="#" class="btn btn-primary" data-id= producto.id) Agregar al Carrito

@@ -1,0 +1,36 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+        link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:wght@400;700&family=Staatliches&display=swap', rel='stylesheet')
+        link(href='https://use.fontawesome.com/releases/v5.6.3/css/all.css', rel='stylesheet')
+        link(rel="stylesheet", href="/css/normalize.css")
+        link(rel="stylesheet", href="/css/skeleton.css")
+        link(rel="stylesheet", href="/css/custom.css")
+
+        title #{titulo} | #{pagina}
+    body
+        header(id="header" class="header")
+            .container
+                .row
+                    .d-flex.flex-grow-1.justify-content-between
+                        .col-4
+                            img(src="img/logo.jpg" id="logo")
+                        .col-2
+                            ul.d-flex.justify-content-between
+                                li.submenu
+                                    img(src="img/cart.png" id="img-carrito")
+                                    div(id="carrito")
+                                        p(class=vacio) Carrito Vacio
+                                        a(href="#" id="vaciar-carrito" class="button u-full-width") Vaciar Carrito
+                                li.submenu
+                                    img(src="img/user.png" id="img-user")
+                                    div(id="user")
+                                        p(class=vacio) Carrito Vacio
+                                        a(href="#" id="vaciar-carrito" class="button u-full-width") Vaciar Carrito
+                                        
+
+            
+                    
+                    
