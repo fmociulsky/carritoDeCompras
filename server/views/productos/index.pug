@@ -1,0 +1,9 @@
+extends ../layout/index
+block contenido
+    div 
+        h1.my-5 Productos
+        .row
+            .col-10.m-auto
+                .d-flex.flex-wrap
+                    each producto in productos
+                        include ../layout/partials/product-card

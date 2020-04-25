@@ -1,0 +1,38 @@
+extends ../layout/index
+block contenido
+    div 
+        .row.justify-content-center
+            .col-md-6
+                h1.my-5 Detalle del Producto
+            .col-md-8
+                form(action="/producto", method="POST")
+                    form-group
+                        label(for="titulo") Titulo
+                        input(id="titulo", class="form-control", type="text", placeholder="Titulo", name="titulo", value=producto.titulo)  
+                    form-group
+                        label(for="descripcion") Descripcion
+                        textarea(id="descripcion", class="form-control", rows="3" , name="descripcion") #{producto.descripcion}
+                    form-group
+                        label(for="precio") Categoria
+                        select(class="browser-default custom-select" name="categoria")
+                            option Seleccione una Categoria
+                            each categoria in categorias
+                                if categoria.id == producto.categoriaId
+                                    option(value=categoria.id  selected) #{categoria.nombre}
+                                else
+                                    option(value=categoria.id) #{categoria.nombre}
+                    form-group
+                        label(for="precio") Precio
+                        input(id="precio", class="form-control", type="number", placeholder="Precio", name="precio", value=producto.precio)
+                    form-group
+                        label(for="precio_oferta") Precio de Oferta
+                        input(id="precio_oferta", class="form-control", type="number", placeholder="Precio de Oferta", name="precio_oferta", value=producto.precio_oferta)
+                    form-group
+                        label(for="imagen") Imagen
+                        input(id="imagen", class="form-control", type="file", name="imagen")
+                    .row
+                        .col-md-11
+                            .d-flex.justify-content-between
+                                a(href="/" class="btn btn-primary" data-id= producto.id) Volver
+                                a(href='/producto/' + producto.id class="btn btn-primary" data-id= producto.id) Editar
+                                a(href='/producto/' + producto.id class="btn btn-primary" data-id= producto.id) Guardar

@@ -3,8 +3,16 @@
         img(src="img/curso1.jpg")
         .info-card
             h3 #{producto.titulo}
-            p #{producto.descripcion}
+            p #{producto.descripcion} 
+                if producto.categoria
+                    span (#{producto.categoria})
             .d-flex.justify-content-between
-                p.precio $#{producto.precio}
-                h5 $#{producto.precio_oferta}
-            a(href="#" class="btn btn-primary" data-id= producto.id) Agregar al Carrito
+                if(producto.precio_oferta == '0')
+                    p.precio
+                    h5 $#{producto.precio} 
+                else
+                    p.precio $#{producto.precio}
+                    h5 $#{producto.precio_oferta} 
+            .d-flex.justify-content-between   
+                a(href='/producto/' + producto.id class="btn btn-primary" data-id= producto.id) Detalle
+                a(href="#" class="btn btn-primary" data-id= producto.id) Agregar al Carrito

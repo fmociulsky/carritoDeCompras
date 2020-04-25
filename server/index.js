@@ -35,7 +35,7 @@ app.use(express.static('public'))
 const config = configs[app.get('env')];
 
 //Variable para el sitio web
-app.locals.titulo = config.nombresitio;
+app.locals.title = config.nombresitio;
 
 //Muestra el año actual y genera la ruta
 app.use((req, res, next)=> {

@@ -1,0 +1,20 @@
+extends ../layout/index
+block contenido
+    form(action="/categorias", method="POST") 
+        .row.flex-column.align-items-center
+            .col-md-6
+                h1.my-5 Categorias
+            .col-md-4
+                table.table.table-hover(id="categorias")
+                    thead
+                        tr
+                            th Nombre
+                    tbody
+                        each categoria in categorias
+                            tr
+                                td(data-id=categoria.id) #{categoria.nombre}
+            .col-md-4.mt-3
+                a(class="btn btn-primary float-left" onclick="agregarCategoria()") Agregar
+                a(class="btn btn-primary float-right" onclick="guardarCategorias()") Guardar
+                //button.btn.btn-primary.float-left(onclick="agregarCategoria()") Agregar
+                //button.btn.btn-danger.float-right(type="submit") Guardar
