@@ -13,8 +13,7 @@ exports.mainPage = async (req, res) =>{
     productos.forEach(p=>{
         p.dataValues.categoria = categoriasMap.get(p.dataValues.categoria);     
     });
-    
-    console.log(productos);
+
     res.render('index', {
         productos
     });

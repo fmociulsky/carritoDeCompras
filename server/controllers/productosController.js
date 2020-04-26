@@ -41,3 +41,22 @@ exports.guardarProducto = async (req, res) =>{
         })
         .catch(error=>console.log(error))
 }
+
+exports.actualizarProducto = async (req, res) =>{
+    console.log(req.params.id)
+    let {titulo, descripcion, categoria, precio, precio_oferta, imagen} = req.body;
+    await Producto.update({ 
+        titulo,descripcion, categoria, precio, precio_oferta, imagen
+      }, {
+        where: {id: req.params.id},
+        new: true,
+        returning: true, // needed for affectedRows to be populated
+        plain: true // makes sure that the returned instances are just plain objects
+      });
+    const producto = await Producto.findByPk(req.params.id);
+    const categorias = await Categoria.findAll();
+    res.render("producto/detalle",{
+        producto,
+        categorias
+    });
+}

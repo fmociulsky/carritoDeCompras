@@ -42,3 +42,21 @@ function guardarCategorias(){
         }    
     }*/
 }
+
+function habilitarEdicion(){
+    const elements = [];
+    elements.push(document.getElementsByTagName("input"));
+    elements.push(document.getElementsByTagName("textarea"));
+    elements.push(document.getElementsByTagName("select"));
+    for (let i = 0; i < elements.length; i++) {
+        for (let e = 0; e < elements[i].length; e++) {
+            removerDisabled(elements[i][e]);
+        }
+    }
+    document.getElementById("editar").setAttribute("hidden", "hidden");
+    document.getElementById("guardar").removeAttribute("hidden");
+}
+
+function removerDisabled(elemento){
+    elemento.removeAttribute("disabled");
+}

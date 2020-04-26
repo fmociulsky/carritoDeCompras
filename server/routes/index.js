@@ -16,6 +16,8 @@ module.exports = function(){
 
     router.post('/producto', productosController.guardarProducto);
 
+    router.post('/producto/:id', productosController.actualizarProducto);
+
     router.get('/categorias', categoriasController.listarCatetogorias);
 
     router.post('/categorias', categoriasController.guardarCatetogorias);
